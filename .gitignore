@@ -1,0 +1,4 @@
+src/WebDriverExtensions/bin/
+src/WebDriverExtensions/obj/
+tests/WebDriverExtension.Tests/bin/
+tests/WebDriverExtension.Tests/obj/
