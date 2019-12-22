@@ -19,7 +19,9 @@ There is a way to try and find an element using a class called ```WebDriverWait`
 
 ```csharp
 public static IWebElement SafeGetElement(this IWebDriver driver, By by, int timeOutInSeconds = 0, Func<IWebElement, IWebElement> elementCheckFunc = null)
+```
 
+```csharp
 public static IReadOnlyCollection<IWebElement> SafeGetElements(this IWebDriver driver, By by, int timeOutInSeconds = 0)
 ```
 
