@@ -15,10 +15,12 @@ So, this extension uses the catch ```Exception``` to catch all exceptions raised
 
 There is a way to try and find an element using a class called ```WebDriverWait```.  However, I found that this still threw exceptions.  So, I have written this extension to wrap a ``do`` ```while``` loop around the ```try catch``` block.
 
-## Signature
+## Signatures
 
 ```csharp
-public static IWebElement SafeGetElement(this IWebDriver driver, By by, int timeOutInSeconds, Func<IWebElement, IWebElement> elementCheckFunc)
+public static IWebElement SafeGetElement(this IWebDriver driver, By by, int timeOutInSeconds = 0, Func<IWebElement, IWebElement> elementCheckFunc = null)
+
+public static IReadOnlyCollection<IWebElement> SafeGetElements(this IWebDriver driver, By by, int timeOutInSeconds = 0)
 ```
 
 ### IWebDriver
@@ -43,8 +45,14 @@ You would use it to limit the element further.  You might not want the element t
 
 Here are some examples of how to use the element.  They are, mostly, taken from the unit test project.
 
+### Safe Get Element
+
 ```csharp
-var result = _driver.SafeGetElement(null, 1, (element) => element);
+var result = _driver.SafeGetElement(By.Id("banana"));
+```
+
+```csharp
+var result = _driver.SafeGetElement(By.Id("banana"), 5);
 ```
 
 ```csharp
@@ -57,4 +65,14 @@ var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => element.Dis
 
 ```csharp
 var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => (element.Displayed && element.Enabled) ? element : null);
+```
+
+### Safe Get Elements
+
+```csharp
+var result = _driver.SafeGetElements(By.Id("banana"));
+```
+
+```csharp
+var result = _driver.SafeGetElements(By.Id("banana"), 5);
 ```
