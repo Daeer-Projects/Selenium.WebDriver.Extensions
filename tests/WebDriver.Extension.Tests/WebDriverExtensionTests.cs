@@ -4,10 +4,10 @@ using FluentAssertions;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
 using OpenQA.Selenium;
-using WebDriverExtensions;
+using WebDriver.Extensions;
 using Xunit;
 
-namespace WebDriverExtension.Tests
+namespace WebDriver.Extension.Tests
 {
     public class WebDriverExtensionTests
     {

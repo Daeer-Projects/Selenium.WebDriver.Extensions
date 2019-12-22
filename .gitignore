@@ -2,3 +2,7 @@ src/WebDriverExtensions/bin/
 src/WebDriverExtensions/obj/
 tests/WebDriverExtension.Tests/bin/
 tests/WebDriverExtension.Tests/obj/
+src/WebDriver.Extensions/bin/
+src/WebDriver.Extensions/obj/
+tests/WebDriver.Extension.Tests/bin/
+tests/WebDriver.Extension.Tests/obj/

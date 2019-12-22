@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\WebDriverExtensions\WebDriverExtensions.csproj" />
+    <ProjectReference Include="..\..\src\WebDriver.Extensions\WebDriver.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

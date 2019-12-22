@@ -2,7 +2,7 @@
 
 using OpenQA.Selenium;
 
-namespace WebDriverExtensions
+namespace WebDriver.Extensions
 {
     public static class WebDriverExtensions
     {
