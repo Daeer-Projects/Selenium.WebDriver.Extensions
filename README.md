@@ -9,7 +9,9 @@ I created this repository to help with Selenium testing.  I found there were som
 
 The current tooling seems to throw exceptions ***a lot*** when the element can't be found.  This is due to the page not loading fully, or not being visible.
 
-So, this extension uses the catch ```Exception``` to catch all exceptions raised by the find method.
+So, these extensions use the catch ```Exception``` to catch all exceptions raised by the find methods.
+
+If you ***need*** the exceptions to be raised, then this extension is not for you.
 
 ## Wait until
 
@@ -35,7 +37,7 @@ The ```By``` parameter we are using for the search.
 
 ### int
 
-The time out in seconds that the process will run for while it is attempting to find the element.  If the time runs out, and the element still hasn't been found, then it will return null, and not throw an exception.
+The time out in seconds that the process will run for while it is attempting to find the element(s).  If the time runs out, and the element(s) still hasn't been found, then it will return null, and not throw an exception.
 
 ### Func<IWebElement, IWebElement>
 

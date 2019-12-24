@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 using FluentAssertions;
@@ -11,11 +12,17 @@ using Xunit;
 
 namespace WebDriver.Extension.Tests
 {
+    /// <summary>
+    /// The tests for the extension methods.
+    /// </summary>
     public class WebDriverExtensionTests
     {
         private readonly IWebDriver _driver;
         private readonly IWebElement _element;
 
+        /// <summary>
+        /// Initialises a new instance of the WebDriverExtensionTests that sets up the driver and element for testing.
+        /// </summary>
         public WebDriverExtensionTests()
         {
             _driver = Substitute.For<IWebDriver>();
@@ -200,6 +207,19 @@ namespace WebDriver.Extension.Tests
         }
 
         [Fact]
+        public void Test_safe_get_with_zero_timeout_and_null_function_and_exceptions_thrown_returns_null()
+        {
+            // Arrange.
+            _driver.FindElement(Arg.Any<By>()).Throws(new Exception());
+
+            // Act.
+            var result = _driver.SafeGetElement(By.Id("banana"));
+
+            // Assert.
+            result.Should().BeNull();
+        }
+
+        [Fact]
         public void Test_safe_get_with_one_timeout_and_null_function_and_no_such_element_exception_thrown_returns_null()
         {
             // Arrange.
@@ -294,7 +314,6 @@ namespace WebDriver.Extension.Tests
             stopWatch.Elapsed.Seconds.Should().Be(2);
         }
 
-
         [Fact]
         public void Test_safe_get_with_zero_timeout_and_exception_thrown_returns_null()
         {
@@ -333,7 +352,7 @@ namespace WebDriver.Extension.Tests
             // Assert.
             result.Should().BeNull();
         }
-        
+
         [Fact]
         public void Test_safe_get_elements_with_null_timeout_and_elements_not_found_returns_null()
         {
@@ -359,7 +378,6 @@ namespace WebDriver.Extension.Tests
             // Assert.
             result.Should().BeNull();
         }
-
 
         [Fact]
         public void Test_safe_get_elements_with_time_out_and_element_found_returns_element()
@@ -401,7 +419,6 @@ namespace WebDriver.Extension.Tests
             stopWatch.Elapsed.Seconds.Should().BeLessThan(5);
         }
 
-
         [Fact]
         public void Test_safe_get_elements_with_zero_timeout_and_null_function_and_no_such_element_exception_thrown_returns_null()
         {
@@ -433,6 +450,19 @@ namespace WebDriver.Extension.Tests
         {
             // Arrange.
             _driver.FindElements(Arg.Any<By>()).Throws(new NoSuchWindowException());
+
+            // Act.
+            var result = _driver.SafeGetElements(By.Id("banana"));
+
+            // Assert.
+            result.Should().BeNull();
+        }
+
+        [Fact]
+        public void Test_safe_get_elements_with_zero_timeout_and_null_function_and_exceptions_thrown_returns_null()
+        {
+            // Arrange.
+            _driver.FindElements(Arg.Any<By>()).Throws(new Exception());
 
             // Act.
             var result = _driver.SafeGetElements(By.Id("banana"));
@@ -479,7 +509,7 @@ namespace WebDriver.Extension.Tests
             // Assert.
             result.Should().BeNull();
         }
-        
+
         #endregion Safe Get Elements
     }
 }
