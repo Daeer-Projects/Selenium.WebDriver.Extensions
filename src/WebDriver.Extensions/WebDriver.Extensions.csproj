@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>David Clark</Authors>
+    <Company>Daeer Projects</Company>
+    <Description>A small collection of extension methods for the Selenium IWebDriver.</Description>
+    <RepositoryUrl>https://github.com/daeer73/Selenium.WebDriver.Extensions</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>Selenium;IWebDriver;Extensions</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn />
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
