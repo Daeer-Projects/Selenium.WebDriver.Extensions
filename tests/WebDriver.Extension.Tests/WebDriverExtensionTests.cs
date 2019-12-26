@@ -311,7 +311,7 @@ namespace WebDriver.Extension.Tests
 
             // Assert.
             result.Should().BeNull();
-            stopWatch.Elapsed.Seconds.Should().Be(3);
+            stopWatch.Elapsed.TotalMilliseconds.Should().BeInRange(2500.0, 3500.0);
         }
 
         [Fact]
