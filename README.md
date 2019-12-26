@@ -1,6 +1,10 @@
 # Selenium Web Driver Extension
 
-I created this repository to help with Selenium testing.  I found there were some problems with using the built in tools.
+I created this repository to help with Selenium testing.  
+
+[![Build status](https://ci.appveyor.com/api/projects/status/2wj25042v19t13m1?svg=true)](https://ci.appveyor.com/project/daeer73/selenium-webdriver-extensions)
+
+I found there were some problems with using the built in tools.
 
 * Exceptions
 * Wait until
