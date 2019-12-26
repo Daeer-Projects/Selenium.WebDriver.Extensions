@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$author$</authors>
+    <owners>$owners$</owners>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/daeer73/Selenium.WebDriver.Extensions</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <tags>daeer selenium IWebDriver extensions</tags>
+    <releaseNotes>$releaseNotes$</releaseNotes>
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.5.0" />
+      </group>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.5.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="LICENSE.txt" target="" />
+    <file src="src\WebDriver.Extensions\bin\Release\netstandard2.0\WebDriver.Extensions.dll" target="lib\netstandard2.0\WebDriver.Extensions.dll" />
+  </files>
+</package>
