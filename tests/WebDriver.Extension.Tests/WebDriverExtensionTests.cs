@@ -298,7 +298,7 @@ namespace WebDriver.Extension.Tests
         }
 
         [Fact]
-        public void Test_safe_get_with_one_second_timeout_and_element_not_found_returns_null_after_time_out()
+        public void Test_safe_get_with_three_second_timeout_and_element_not_found_returns_null_after_time_out()
         {
             // Arrange.
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchElementException());
@@ -306,12 +306,12 @@ namespace WebDriver.Extension.Tests
 
             // Act.
             stopWatch.Start();
-            var result = _driver.SafeGetElement(By.Id("banana"), 2, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 3, (element) => element.Displayed ? element : null);
             stopWatch.Stop();
 
             // Assert.
             result.Should().BeNull();
-            stopWatch.Elapsed.Seconds.Should().Be(2);
+            stopWatch.Elapsed.Seconds.Should().Be(3);
         }
 
         [Fact]
