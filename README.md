@@ -2,7 +2,7 @@
 
 I created this repository to help with Selenium testing.  
 
-[![Build status](https://ci.appveyor.com/api/projects/status/2wj25042v19t13m1?svg=true)](https://ci.appveyor.com/project/daeer73/selenium-webdriver-extensions)
+[![Build status](https://daeer73.visualstudio.com/WebDriver.Extensions/_apis/build/status/WebDriver.Extensions)](https://daeer73.visualstudio.com/WebDriver.Extensions/_build/latest?definitionId=4)
 
 I found there were some problems with using the built in tools.
 
