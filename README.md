@@ -24,11 +24,11 @@ There is a way to try and find an element using a class called ```WebDriverWait`
 ## Signatures
 
 ```csharp
-public static IWebElement SafeGetElement(this IWebDriver driver, By by, int timeOutInSeconds = 0, Func<IWebElement, IWebElement> elementCheckFunc = null)
+public static IWebElement SafeFindElement(this IWebDriver driver, By by, int timeOutInSeconds = 0, Func<IWebElement, IWebElement> elementCheckFunc = null)
 ```
 
 ```csharp
-public static IReadOnlyCollection<IWebElement> SafeGetElements(this IWebDriver driver, By by, int timeOutInSeconds = 0)
+public static IReadOnlyCollection<IWebElement> SafeFindElements(this IWebDriver driver, By by, int timeOutInSeconds = 0)
 ```
 
 ### IWebDriver
@@ -56,31 +56,40 @@ Here are some examples of how to use the element.  They are, mostly, taken from 
 ### Safe Get Element
 
 ```csharp
-var result = _driver.SafeGetElement(By.Id("banana"));
+var result = _driver.SafeFindElement(By.Id("banana"));
 ```
 
 ```csharp
-var result = _driver.SafeGetElement(By.Id("banana"), 5);
+var result = _driver.SafeFindElement(By.Id("banana"), 5);
 ```
 
 ```csharp
-var result = _driver.SafeGetElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
+var result = _driver.SafeFindElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
 ```
 
 ```csharp
-var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
+var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
 ```
 
 ```csharp
-var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => (element.Displayed && element.Enabled) ? element : null);
+var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => (element.Displayed && element.Enabled) ? element : null);
 ```
 
 ### Safe Get Elements
 
 ```csharp
-var result = _driver.SafeGetElements(By.Id("banana"));
+var result = _driver.SafeFindElements(By.Id("banana"));
 ```
 
 ```csharp
-var result = _driver.SafeGetElements(By.Id("banana"), 5);
+var result = _driver.SafeFindElements(By.Id("banana"), 5);
 ```
+
+## Obsolete Methods
+
+To keep the methods names the same as the `Selenium.WebDriver` methods, an issue was raised on GitHub.  This has been fixed.
+
+The following methods are now obsolete and will be removed in a later version of the library.
+
+* `SafeGetElement`
+* `SafeGetElements`
