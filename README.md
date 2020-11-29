@@ -53,7 +53,7 @@ You would use it to limit the element further.  You might not want the element t
 
 Here are some examples of how to use the element.  They are, mostly, taken from the unit test project.
 
-### Safe Get Element
+### Safe Find Element
 
 ```csharp
 var result = _driver.SafeFindElement(By.Id("banana"));
@@ -75,7 +75,7 @@ var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => element.Di
 var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => (element.Displayed && element.Enabled) ? element : null);
 ```
 
-### Safe Get Elements
+### Safe Find Elements
 
 ```csharp
 var result = _driver.SafeFindElements(By.Id("banana"));
