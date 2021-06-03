@@ -211,7 +211,7 @@ namespace WebDriver.Extensions
             return (foundElement, stop);
         }
 
-        private static (IReadOnlyCollection<IWebElement>, bool) ProcessFindElements(IWebDriver driver, By by)
+        private static (IReadOnlyCollection<IWebElement>, bool) ProcessFindElements(ISearchContext driver, By by)
         {
             IReadOnlyCollection<IWebElement> foundElements;
             var stop = false;

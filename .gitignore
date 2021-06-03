@@ -6,3 +6,7 @@ src/WebDriver.Extensions/bin/
 src/WebDriver.Extensions/obj/
 tests/WebDriver.Extension.Tests/bin/
 tests/WebDriver.Extension.Tests/obj/
+src/bin/
+src/obj/
+tests/bin/
+tests/obj/
