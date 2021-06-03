@@ -10,6 +10,8 @@ using OpenQA.Selenium;
 using WebDriver.Extensions;
 using Xunit;
 
+#pragma warning disable 618
+
 namespace WebDriver.Extension.Tests
 {
     /// <summary>
@@ -58,7 +60,7 @@ namespace WebDriver.Extension.Tests
         {
             // Arrange.
             // Act.
-            var result = _driver.SafeGetElement(null, 1, (element) => element);
+            var result = _driver.SafeGetElement(null, 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -84,7 +86,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 0, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -97,7 +99,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 2, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 2, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -125,7 +127,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Returns(_element);
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 5, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().Be(_element);
@@ -159,7 +161,7 @@ namespace WebDriver.Extension.Tests
 
             // Act.
             stopWatch.Start();
-            var result = _driver.SafeGetElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 5, element => element.Displayed ? element : null);
             stopWatch.Stop();
 
             // Assert.
@@ -265,7 +267,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchElementException());
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeGetElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -278,7 +280,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchFrameException());
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeGetElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -291,7 +293,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchWindowException());
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeGetElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -306,7 +308,7 @@ namespace WebDriver.Extension.Tests
 
             // Act.
             stopWatch.Start();
-            var result = _driver.SafeGetElement(By.Id("banana"), 3, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 3, element => element.Displayed ? element : null);
             stopWatch.Stop();
 
             // Assert.
@@ -321,7 +323,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchElementException());
 
             // Act.
-            var result = _driver.SafeGetElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeGetElement(By.Id("banana"), 0, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -373,7 +375,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeGetElements(By.Id("banana"), 0);
+            var result = _driver.SafeGetElements(By.Id("banana"));
 
             // Assert.
             result.Should().BeNull();
@@ -541,7 +543,7 @@ namespace WebDriver.Extension.Tests
         {
             // Arrange.
             // Act.
-            var result = _driver.SafeFindElement(null, 1, (element) => element);
+            var result = _driver.SafeFindElement(null, 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -567,7 +569,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 0, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -580,7 +582,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 2, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 2, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -608,7 +610,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Returns(_element);
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 5, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().Be(_element);
@@ -642,7 +644,7 @@ namespace WebDriver.Extension.Tests
 
             // Act.
             stopWatch.Start();
-            var result = _driver.SafeFindElement(By.Id("banana"), 5, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 5, element => element.Displayed ? element : null);
             stopWatch.Stop();
 
             // Assert.
@@ -748,7 +750,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchElementException());
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeFindElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -761,7 +763,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchFrameException());
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeFindElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -774,7 +776,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchWindowException());
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 1, (element) => element);
+            var result = _driver.SafeFindElement(By.Id("banana"), 1, element => element);
 
             // Assert.
             result.Should().BeNull();
@@ -789,7 +791,7 @@ namespace WebDriver.Extension.Tests
 
             // Act.
             stopWatch.Start();
-            var result = _driver.SafeFindElement(By.Id("banana"), 3, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 3, element => element.Displayed ? element : null);
             stopWatch.Stop();
 
             // Assert.
@@ -804,7 +806,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElement(Arg.Any<By>()).Throws(new NoSuchElementException());
 
             // Act.
-            var result = _driver.SafeFindElement(By.Id("banana"), 0, (element) => element.Displayed ? element : null);
+            var result = _driver.SafeFindElement(By.Id("banana"), 0, element => element.Displayed ? element : null);
 
             // Assert.
             result.Should().BeNull();
@@ -856,7 +858,7 @@ namespace WebDriver.Extension.Tests
             _driver.FindElements(Arg.Any<By>()).ReturnsNull();
 
             // Act.
-            var result = _driver.SafeFindElements(By.Id("banana"), 0);
+            var result = _driver.SafeFindElements(By.Id("banana"));
 
             // Assert.
             result.Should().BeNull();
