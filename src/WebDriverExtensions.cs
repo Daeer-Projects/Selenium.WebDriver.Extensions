@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using OpenQA.Selenium;
 
 namespace WebDriver.Extensions
@@ -201,6 +200,7 @@ namespace WebDriver.Extensions
                 {
                     foundElement = safeFind;
                 }
+
                 stop = true;
             }
             catch (Exception)
