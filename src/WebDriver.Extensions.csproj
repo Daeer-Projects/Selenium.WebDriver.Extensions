@@ -2,27 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netcoreapp3.1;NET5.0;NET6.0</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>David Clark</Authors>
-    <Company>Daeer Projects</Company>
-    <Description>A small collection of extension methods for the Selenium IWebDriver.</Description>
-    <RepositoryUrl>https://github.com/daeer73/Selenium.WebDriver.Extensions</RepositoryUrl>
-    <RepositoryType>Public</RepositoryType>
-    <PackageTags>Selenium;IWebDriver;Extensions</PackageTags>
-    <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/daeer73/Selenium.WebDriver.Extensions</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn />
-  </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Selenium.WebDriver">
-      <Version>3.141.0</Version>
-    </PackageReference>
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE">
