@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>NET6.0;NET7.0;NET8.0</TargetFrameworks>
+    <TargetFrameworks>NET8.0;NET9.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Selenium.WebDriver" Version="4.15.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.27.0" />
   </ItemGroup>
 
 </Project>
