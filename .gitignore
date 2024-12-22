@@ -12,3 +12,7 @@ tests/bin/
 tests/obj/
 .vs
 Selenium.WebDriver.Extensions.sln.DotSettings.user
+.idea/.idea.Selenium.WebDriver.Extensions/.idea/indexLayout.xml
+.idea/.idea.Selenium.WebDriver.Extensions/.idea/projectSettingsUpdater.xml
+.idea/.idea.Selenium.WebDriver.Extensions/.idea/vcs.xml
+.idea/.idea.Selenium.WebDriver.Extensions/.idea/workspace.xml
